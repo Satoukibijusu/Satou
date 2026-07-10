@@ -1,0 +1,89 @@
+/* ============================================================
+   responsive.css
+   Breakpoints: 1024px (tablet landscape), 768px (tablet portrait
+   / mobile landscape), 480px (mobile portrait).
+   Mobile-first overrides are avoided in favor of a desktop-first
+   cascade to match how style.css is authored.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   ≤ 1024px — Tablet
+   ------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  :root {
+    --section-pad-y: 6.5rem;
+    --gutter: 1.5rem;
+  }
+
+  .nav-links { gap: 1.6rem; }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-visual { order: -1; }
+  .hero-visual-frame { max-width: 280px; margin: 0 auto; }
+  .hero-content { max-width: 100%; }
+}
+
+/* ------------------------------------------------------------
+   ≤ 860px — Nav collapses to hamburger
+   ------------------------------------------------------------ */
+@media (max-width: 860px) {
+  .nav-links,
+  .nav-right .nav-social,
+  .nav-right .lang-toggle { display: none; }
+
+  .nav-toggle { display: flex; }
+
+  .nav-right { gap: 0.8rem; }
+
+  .nav-mobile-panel-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--border-soft);
+  }
+}
+
+/* ------------------------------------------------------------
+   ≤ 768px — Mobile landscape / small tablet
+   ------------------------------------------------------------ */
+@media (max-width: 768px) {
+  .hero { padding-top: calc(var(--nav-height) + 1.5rem); min-height: auto; padding-bottom: 3rem; }
+
+  .hero-title { font-size: clamp(2.6rem, 12vw, 3.6rem); }
+  .hero-mission { font-size: 1.3rem; }
+
+  .hero-actions { flex-wrap: wrap; }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    row-gap: 1.4rem;
+  }
+
+  .hero-stat {
+    flex: 1 1 45%;
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .hero-scroll-cue { display: none; }
+}
+
+/* ------------------------------------------------------------
+   ≤ 480px — Mobile portrait
+   ------------------------------------------------------------ */
+@media (max-width: 480px) {
+  :root { --gutter: 1.25rem; }
+
+  .hero-title { font-size: 2.4rem; }
+  .hero-role { font-size: 1.15rem; }
+  .hero-mission { font-size: 1.1rem; }
+
+  .btn { padding: 0.75rem 1.3rem; font-size: 0.82rem; }
+
+  .hero-stat { flex: 1 1 100%; }
+}

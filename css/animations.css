@@ -1,0 +1,98 @@
+/* ============================================================
+   animations.css
+   Keyframes + scroll-reveal utility classes.
+   All animations are additive: elements are fully usable/visible
+   even if JS fails to load (progressive enhancement).
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   KEYFRAMES
+   ------------------------------------------------------------ */
+@keyframes scrollLine {
+  0%   { left: -100%; }
+  60%  { left: 100%; }
+  100% { left: 100%; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes marqueeLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 1; }
+}
+
+/* ------------------------------------------------------------
+   SCROLL REVEAL
+   Elements start hidden via [data-reveal], JS adds .is-visible
+   when they enter the viewport (see js/main.js).
+   ------------------------------------------------------------ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+  will-change: opacity, transform;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* staggered children helper: apply [data-reveal-group] to a parent
+   and [data-reveal] to children; JS assigns incremental delay */
+[data-reveal][data-delay="1"] { transition-delay: 0.08s; }
+[data-reveal][data-delay="2"] { transition-delay: 0.16s; }
+[data-reveal][data-delay="3"] { transition-delay: 0.24s; }
+[data-reveal][data-delay="4"] { transition-delay: 0.32s; }
+[data-reveal][data-delay="5"] { transition-delay: 0.40s; }
+[data-reveal][data-delay="6"] { transition-delay: 0.48s; }
+
+/* Hero content plays on load, not on scroll */
+.hero-content > * {
+  animation: fadeUp 0.8s var(--ease-out) both;
+}
+.hero-eyebrow      { animation-delay: 0.05s; }
+.hero-title        { animation-delay: 0.15s; }
+.hero-role         { animation-delay: 0.25s; }
+.hero-mission      { animation-delay: 0.35s; }
+.hero-actions      { animation-delay: 0.45s; }
+.hero-stats        { animation-delay: 0.55s; }
+
+.hero-visual {
+  animation: fadeIn 1.1s var(--ease-out) 0.3s both;
+}
+
+/* ------------------------------------------------------------
+   REDUCED MOTION
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
