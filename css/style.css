@@ -1,6 +1,6 @@
 /* ============================================================
-   SATOUKIBIJUSU — PORTFOLIO
-   style.css — base, tokens, typography, nav, hero
+   SATOUKIBIJUSU (PORTFOLIO)
+   style.css: base, tokens, typography, nav, hero
    Sections are appended in stages; each stage is clearly marked.
    ============================================================ */
 
@@ -369,13 +369,13 @@ body.lang-en div[data-lang="en"] { display: block !important; }
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1.35fr 0.65fr;
   align-items: center;
-  gap: 2rem;
+  gap: 3.5rem;
   width: 100%;
 }
 
-.hero-content { max-width: 640px; }
+.hero-content { max-width: 700px; }
 
 .hero-eyebrow { margin-bottom: 1.6rem; }
 
@@ -421,17 +421,18 @@ body.lang-en div[data-lang="en"] { display: block !important; }
   display: flex;
   gap: 0;
   border-top: 1px solid var(--border);
-  padding-top: 1.8rem;
-  max-width: 620px;
+  padding-top: 2.6rem;
+  max-width: 680px;
 }
 
 .hero-stat {
   flex: 1;
-  padding-right: 1.5rem;
+  padding-right: 2.2rem;
   border-right: 1px solid var(--border-soft);
 }
 
 .hero-stat:last-child { border-right: none; padding-right: 0; }
+.hero-stat:not(:first-child) { padding-left: 2.2rem; }
 
 .hero-stat-value {
   font-family: var(--font-display);
@@ -462,7 +463,7 @@ body.lang-en div[data-lang="en"] { display: block !important; }
 .hero-visual-frame {
   position: relative;
   width: 100%;
-  max-width: 440px;
+  max-width: 380px;
   aspect-ratio: 13 / 16;
 }
 
@@ -482,36 +483,924 @@ body.lang-en div[data-lang="en"] { display: block !important; }
   z-index: 0;
 }
 
-.hero-scroll-cue {
-  position: absolute;
-  bottom: 2.4rem;
-  left: var(--gutter);
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted-2);
+/* ------------------------------------------------------------
+   9. COMPANIES (double marquee)
+   Each track's inner list is duplicated in the HTML (two copies
+   back to back) so translateX(-50%) loops seamlessly.
+   ------------------------------------------------------------ */
+.companies {
+  padding: 2.75rem 0;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--surface);
 }
 
-.hero-scroll-cue .line {
-  width: 28px;
-  height: 1px;
-  background: var(--muted-2);
-  position: relative;
+.companies-head {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.marquee-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.marquee-viewport {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+.marquee-track--a {
+  animation: marqueeLeft 64s linear infinite;
+}
+
+.marquee-track--b {
+  animation: marqueeRight 92s linear infinite;
+}
+
+.marquee-list {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  padding-right: 2.25rem;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  height: 52px;
+  opacity: 0.72;
+  filter: grayscale(1);
+  transition: opacity var(--dur-fast) ease, filter var(--dur-fast) ease, transform var(--dur-fast) ease;
+}
+
+.logo-item:hover {
+  opacity: 1;
+  filter: grayscale(0);
+  transform: translateY(-1px);
+}
+
+.logo-item img {
+  height: 100%;
+  width: auto;
+}
+
+/* ------------------------------------------------------------
+   10. AT A GLANCE
+   ------------------------------------------------------------ */
+.glance-head {
+  margin-bottom: 3rem;
+  max-width: 620px;
+}
+
+.glance-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-top: 0.8rem; }
+
+.glance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.glance-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem 1.75rem;
+  transition: border-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
+}
+
+.glance-card:hover {
+  border-color: var(--blue-dim);
+  transform: translateY(-3px);
+}
+
+.glance-value {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 3.4vw, 2.7rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 0.9rem;
+}
+
+.glance-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.glance-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--blue-bright);
+}
+
+/* ------------------------------------------------------------
+   11. CASE STUDIES
+   ------------------------------------------------------------ */
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.section-head h2 {
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  margin-top: 0.8rem;
+  max-width: 520px;
+}
+
+.section-head p {
+  color: var(--muted);
+  max-width: 360px;
+  font-size: 0.92rem;
+  padding-bottom: 0.3rem;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.case-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.case-card:hover {
+  border-color: var(--blue-dim);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px -20px rgba(0,0,0,0.6);
+}
+
+.case-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1.4rem 1.5rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.case-logo {
+  height: 20px;
+  width: auto;
+}
+
+.case-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--white);
+}
+
+.case-media {
+  padding: 1.25rem 1.5rem 0;
+}
+
+.case-media img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.case-card:hover .case-media img {
+  transform: scale(1.015);
+}
+
+.case-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  flex: 1;
+}
+
+.case-block-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue-bright);
+  margin-bottom: 0.4rem;
+}
+
+.case-block p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.case-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 0 1.5rem 1.5rem;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--white);
+  transition: border-color var(--dur-fast) ease, background var(--dur-fast) ease;
+}
+
+.case-cta:hover {
+  border-color: var(--blue);
+  background: var(--blue-glow);
+}
+
+.case-cta svg {
+  width: 13px;
+  height: 13px;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.case-cta:hover svg { transform: translate(2px, -2px); }
+
+.case-cta.is-placeholder {
+  color: var(--muted-2);
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.case-card.is-placeholder {
+  border-style: dashed;
+}
+
+.case-card.is-placeholder:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--border);
+}
+
+/* ------------------------------------------------------------
+   12. AUDIENCE (SaaS-style dashboard)
+   All figures live directly in the HTML (text + inline style
+   widths/gradients), so updating a number is a single edit with
+   no JS or build step involved. See README for a walkthrough.
+   ------------------------------------------------------------ */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.25rem;
+}
+
+.dash-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.9rem 2rem;
+  transition: border-color var(--dur-fast) ease;
+}
+
+.dash-card:hover { border-color: var(--border-soft); }
+
+.dash-card--age {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.dash-card--gender {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-card--engagement {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.dash-card--followers {
+  grid-column: 3;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dash-card-title {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.6rem;
+}
+
+/* horizontal bars (age range) */
+.bar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.bar-row-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.84rem;
+  color: var(--white);
+  margin-bottom: 0.45rem;
+}
+
+.bar-row-label span:last-child {
+  font-family: var(--font-mono);
+  color: var(--blue-bright);
+  font-weight: 500;
+}
+
+.bar-track {
+  height: 8px;
+  border-radius: 5px;
+  background: var(--surface-2);
   overflow: hidden;
 }
 
-.hero-scroll-cue .line::after {
+.bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--blue-dim), var(--blue));
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 1s var(--ease-out);
+}
+
+.dash-card.is-visible .bar-fill,
+.dash-card--age.is-visible .bar-fill { transform: scaleX(1); }
+
+/* donut (gender split) built with a conic-gradient + center cutout */
+.donut-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.donut {
+  --pct: 81.1;
+  position: relative;
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: conic-gradient(var(--blue) calc(var(--pct) * 1%), var(--surface-2) 0);
+}
+
+.donut::after {
   content: '';
   position: absolute;
-  left: -100%;
-  top: 0;
+  inset: 16px;
+  border-radius: 50%;
+  background: var(--surface);
+}
+
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.donut-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.donut-legend-item .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.donut-legend-item .dot.male { background: var(--blue); }
+.donut-legend-item .dot.female { background: var(--surface-2); border: 1px solid var(--border); }
+
+.donut-legend-item strong {
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  margin-left: auto;
+}
+
+/* engagement + followers cards */
+.metric-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.metric-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.metric-row-label {
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.metric-row-value {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.followers-value {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.6vw, 2.8rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+
+.followers-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.6rem;
+}
+
+.followers-trend {
+  display: inline-flex;
+  margin-top: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--blue-bright);
+}
+
+/* ------------------------------------------------------------
+   13. CONTENT FORMATS
+   ------------------------------------------------------------ */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.content-card {
+  perspective: 1000px;
+}
+
+.content-media {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: border-color var(--dur-fast) ease, transform var(--dur-med) var(--ease-out), box-shadow var(--dur-med) var(--ease-out);
+  transform-style: preserve-3d;
+}
+
+.content-card:hover .content-media {
+  border-color: var(--blue-dim);
+  transform: rotateX(2deg) rotateY(-3deg) scale(1.02);
+  box-shadow: 0 24px 60px -24px rgba(0,0,0,0.7);
+}
+
+.content-media img {
+  width: 100%;
+  display: block;
+  transition: transform var(--dur-med) var(--ease-out);
+}
+
+.content-card:hover .content-media img { transform: scale(1.04); }
+
+.content-play {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: rgba(6, 7, 10, 0.6);
+  border: 1px solid rgba(243, 245, 248, 0.25);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--dur-fast) var(--ease-out), background var(--dur-fast) ease;
+}
+
+.content-card:hover .content-play {
+  background: var(--blue);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.content-play svg { width: 16px; height: 16px; color: var(--white); margin-left: 2px; }
+
+.content-info {
+  padding: 1.1rem 0.2rem 0;
+}
+
+.content-info h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+}
+
+.content-info p {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ------------------------------------------------------------
+   14. NODRA
+   ------------------------------------------------------------ */
+.nodra-head {
+  max-width: 680px;
+  margin-bottom: 3rem;
+}
+
+.nodra-head h2 {
+  font-size: clamp(2.2rem, 4.2vw, 3.2rem);
+  margin: 0.8rem 0 1.1rem;
+}
+
+.nodra-head p {
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.nodra-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.nodra-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
+}
+
+.nodra-card:hover {
+  border-color: var(--blue-dim);
+  transform: translateY(-4px);
+}
+
+.nodra-card-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.nodra-card-media img {
   width: 100%;
   height: 100%;
-  background: var(--blue);
-  animation: scrollLine 2.2s var(--ease-out) infinite;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
 }
+
+.nodra-card:hover .nodra-card-media img { transform: scale(1.04); }
+
+.nodra-card-body { padding: 1.4rem 1.5rem 1.6rem; }
+
+.nodra-card-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-bright);
+  margin-bottom: 0.7rem;
+}
+
+.nodra-card-body h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.nodra-card-body p {
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.nodra-card.is-placeholder {
+  border-style: dashed;
+}
+
+.nodra-card.is-placeholder:hover {
+  transform: none;
+  border-color: var(--border);
+}
+
+.nodra-card.is-placeholder .nodra-card-tag {
+  color: var(--muted-2);
+}
+
+/* ------------------------------------------------------------
+   15. WHY BRANDS WORK WITH ME
+   ------------------------------------------------------------ */
+.why-brands { background: var(--surface); }
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.reason-card {
+  background: var(--black);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.9rem;
+  transition: border-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
+}
+
+.reason-card:hover {
+  border-color: var(--blue-dim);
+  transform: translateY(-3px);
+}
+
+.reason-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--blue-glow);
+  color: var(--blue-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+}
+
+.reason-icon svg { width: 18px; height: 18px; }
+
+.reason-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.reason-card p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ------------------------------------------------------------
+   16. TESTIMONIALS
+   ------------------------------------------------------------ */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.6rem;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  padding: 1.9rem;
+  min-height: 220px;
+}
+
+.testimonial-quote {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.testimonial-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.testimonial-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.testimonial-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.testimonial-role {
+  font-size: 0.78rem;
+  color: var(--muted-2);
+  margin-top: 0.15rem;
+}
+
+/* ------------------------------------------------------------
+   17. CONTACT
+   ------------------------------------------------------------ */
+.contact { position: relative; overflow: hidden; }
+
+.contact-bg-glow {
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 60%;
+  background: radial-gradient(circle, var(--blue-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-inner {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-eyebrow { margin-bottom: 1.6rem; justify-content: center; }
+
+.contact-title {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.02;
+  margin-bottom: 3rem;
+}
+
+.contact-title .accent { color: var(--blue-bright); }
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  transition: border-color var(--dur-fast) ease, background var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
+}
+
+.contact-link:hover {
+  border-color: var(--blue);
+  background: var(--blue-glow);
+  transform: translateY(-2px);
+}
+
+.contact-link svg { width: 17px; height: 17px; }
+
+.contact-character {
+  margin-top: 3.5rem;
+  opacity: 0.95;
+}
+
+.contact-character img {
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* ------------------------------------------------------------
+   18. FOOTER
+   ------------------------------------------------------------ */
+.site-footer {
+  border-top: 1px solid var(--border-soft);
+  padding: 3.5rem 0 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  padding-bottom: 2.75rem;
+}
+
+.footer-brand-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-brand-name .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.footer-brand-role {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  margin-top: 0.5rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+}
+
+.footer-nav a {
+  font-size: 0.84rem;
+  color: var(--muted);
+  transition: color var(--dur-fast) ease;
+}
+
+.footer-nav a:hover { color: var(--white); }
+
+.footer-social {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-soft);
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: var(--muted-2);
+}
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color var(--dur-fast) ease;
+}
+
+.footer-top:hover { color: var(--blue-bright); }

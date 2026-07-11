@@ -7,7 +7,7 @@
    ============================================================ */
 
 /* ------------------------------------------------------------
-   ≤ 1024px — Tablet
+   UP TO 1024px (Tablet)
    ------------------------------------------------------------ */
 @media (max-width: 1024px) {
   :root {
@@ -28,7 +28,7 @@
 }
 
 /* ------------------------------------------------------------
-   ≤ 860px — Nav collapses to hamburger
+   UP TO 860px (Nav collapses to hamburger)
    ------------------------------------------------------------ */
 @media (max-width: 860px) {
   .nav-links,
@@ -49,7 +49,7 @@
 }
 
 /* ------------------------------------------------------------
-   ≤ 768px — Mobile landscape / small tablet
+   UP TO 768px (Mobile landscape / small tablet)
    ------------------------------------------------------------ */
 @media (max-width: 768px) {
   .hero { padding-top: calc(var(--nav-height) + 1.5rem); min-height: auto; padding-bottom: 3rem; }
@@ -61,7 +61,7 @@
 
   .hero-stats {
     flex-wrap: wrap;
-    row-gap: 1.4rem;
+    row-gap: 1.8rem;
   }
 
   .hero-stat {
@@ -69,12 +69,10 @@
     border-right: none;
     padding-right: 0;
   }
-
-  .hero-scroll-cue { display: none; }
 }
 
 /* ------------------------------------------------------------
-   ≤ 480px — Mobile portrait
+   UP TO 480px (Mobile portrait)
    ------------------------------------------------------------ */
 @media (max-width: 480px) {
   :root { --gutter: 1.25rem; }
@@ -86,4 +84,88 @@
   .btn { padding: 0.75rem 1.3rem; font-size: 0.82rem; }
 
   .hero-stat { flex: 1 1 100%; }
+}
+
+/* ------------------------------------------------------------
+   COMPANIES / AT A GLANCE / CASE STUDIES
+   ------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  .glance-grid { grid-template-columns: repeat(2, 1fr); }
+  .case-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .section-head p { padding-bottom: 0; max-width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .companies { padding: 2.25rem 0; }
+  .marquee-list { gap: 1.5rem; padding-right: 1.5rem; }
+  .logo-item { height: 34px; }
+
+  .glance-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .glance-card { padding: 1.5rem 1.25rem; }
+
+  .case-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .glance-grid { grid-template-columns: 1fr; }
+  .glance-value { font-size: 2.1rem; }
+}
+
+/* ------------------------------------------------------------
+   AUDIENCE DASHBOARD / CONTENT FORMATS
+   ------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .dash-card--age    { grid-column: 1 / -1; grid-row: 1; }
+  .dash-card--gender { grid-column: 1; grid-row: 2; }
+  .dash-card--engagement { grid-column: 2; grid-row: 2; }
+  .dash-card--followers  { grid-column: 1 / -1; grid-row: 3; }
+
+  .content-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .dash-card--age, .dash-card--gender, .dash-card--engagement, .dash-card--followers {
+    grid-column: 1; grid-row: auto;
+  }
+  .dash-card { padding: 1.6rem 1.5rem; }
+
+  .content-grid { grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+  .content-grid { grid-template-columns: 1fr; }
+  .donut-wrap { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+}
+
+/* ------------------------------------------------------------
+   NODRA / WHY BRANDS / TESTIMONIALS / CONTACT / FOOTER
+   ------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  .nodra-grid { grid-template-columns: repeat(2, 1fr); }
+  .reasons-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .footer-inner { flex-direction: column; gap: 2rem; }
+}
+
+@media (max-width: 768px) {
+  .nodra-grid { grid-template-columns: 1fr; }
+  .reasons-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+
+  .contact-links { flex-direction: column; width: 100%; }
+  .contact-link { justify-content: center; }
+
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
 }

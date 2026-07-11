@@ -8,12 +8,6 @@
 /* ------------------------------------------------------------
    KEYFRAMES
    ------------------------------------------------------------ */
-@keyframes scrollLine {
-  0%   { left: -100%; }
-  60%  { left: 100%; }
-  100% { left: 100%; }
-}
-
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0); }
