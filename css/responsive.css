@@ -87,10 +87,9 @@
 }
 
 /* ------------------------------------------------------------
-   COMPANIES / AT A GLANCE / CASE STUDIES
+   COMPANIES / CASE STUDIES
    ------------------------------------------------------------ */
 @media (max-width: 1024px) {
-  .glance-grid { grid-template-columns: repeat(2, 1fr); }
   .case-grid { grid-template-columns: repeat(2, 1fr); }
 
   .section-head {
@@ -106,44 +105,37 @@
   .marquee-list { gap: 1.5rem; padding-right: 1.5rem; }
   .logo-item { height: 34px; }
 
-  .glance-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .glance-card { padding: 1.5rem 1.25rem; }
-
   .case-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 480px) {
-  .glance-grid { grid-template-columns: 1fr; }
-  .glance-value { font-size: 2.1rem; }
 }
 
 /* ------------------------------------------------------------
    AUDIENCE DASHBOARD / CONTENT FORMATS
    ------------------------------------------------------------ */
 @media (max-width: 1024px) {
+  .dashboard-kpis { grid-template-columns: repeat(3, 1fr); }
+
   .dashboard-grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
   }
-  .dash-card--age    { grid-column: 1 / -1; grid-row: 1; }
-  .dash-card--gender { grid-column: 1; grid-row: 2; }
-  .dash-card--engagement { grid-column: 2; grid-row: 2; }
-  .dash-card--followers  { grid-column: 1 / -1; grid-row: 3; }
+  .dash-card--age { grid-column: 1 / -1; }
 
   .content-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
+  .dashboard-kpis { grid-template-columns: repeat(2, 1fr); }
+
   .dashboard-grid { grid-template-columns: 1fr; }
-  .dash-card--age, .dash-card--gender, .dash-card--engagement, .dash-card--followers {
-    grid-column: 1; grid-row: auto;
-  }
+  .dash-card--age { grid-column: 1; }
+  .dash-card--engagement { grid-column: 1; }
+  .dash-card--engagement .bar-list { flex-direction: column; gap: 1.1rem; }
   .dash-card { padding: 1.6rem 1.5rem; }
 
   .content-grid { grid-template-columns: 1fr 1fr; gap: 0.9rem; }
 }
 
 @media (max-width: 480px) {
+  .dashboard-kpis { grid-template-columns: 1fr 1fr; }
   .content-grid { grid-template-columns: 1fr; }
   .donut-wrap { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
 }
