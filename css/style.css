@@ -13,7 +13,7 @@
   /* Color */
   --black:        #06070A;
   --surface:       #0D0F14;
-  --surface-2:     #12151C;
+  --surface-2:     #1A2230;
   --border:        #1E232C;
   --border-soft:   #171B22;
 
@@ -501,7 +501,7 @@ body.lang-en div[data-lang="en"] { display: block !important; }
   padding: 2.75rem 0;
   border-top: 1px solid var(--border-soft);
   border-bottom: 1px solid var(--border-soft);
-  background: var(--surface);
+  background: var(--surface-2);
 }
 
 .companies-head {
@@ -552,15 +552,13 @@ body.lang-en div[data-lang="en"] { display: block !important; }
   display: flex;
   align-items: center;
   height: 52px;
-  opacity: 0.72;
-  filter: grayscale(1);
-  transition: opacity var(--dur-fast) ease, filter var(--dur-fast) ease, transform var(--dur-fast) ease;
+  opacity: 1;
+  filter: none;
+  transition: transform var(--dur-fast) ease;
 }
 
 .logo-item:hover {
-  opacity: 1;
-  filter: grayscale(0);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .logo-item img {
