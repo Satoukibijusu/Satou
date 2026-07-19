@@ -625,58 +625,34 @@ body.lang-en div[data-lang="en"] { display: block !important; }
   width: auto;
 }
 
-.case-brand {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.92rem;
-  color: var(--white);
-}
-
-.case-media {
-  position: relative;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.case-media img {
-  width: 100%;
-  display: block;
-  transition: transform 0.6s var(--ease-out);
-}
-
-.case-card:hover .case-media img {
-  transform: scale(1.045);
-}
-
-/* small, discreet corner icon; the screenshot stays the focal point */
-.case-icon {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: rgba(6, 7, 10, 0.55);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  display: flex;
+/* Visible "View Case" badge: every case card links to its own
+   dedicated page under case-studies/*.html. Sits at the bottom of
+   the card body (no screenshot to float over). */
+.case-view-badge {
+  display: inline-flex;
+  align-self: flex-start;
   align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transform: translateY(-3px);
-  transition: opacity var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out), background var(--dur-fast) ease;
-}
-
-.case-icon svg {
-  width: 10px;
-  height: 10px;
-  color: var(--white);
-}
-
-.case-card:hover .case-icon {
-  opacity: 1;
-  transform: translateY(0);
+  gap: 0.4rem;
   background: var(--blue);
+  color: var(--black);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.75rem;
+  border-radius: 20px;
+  margin: 0 1.5rem 1.5rem;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.case-view-badge svg {
+  width: 11px;
+  height: 11px;
+}
+
+.case-card:hover .case-view-badge {
+  transform: translateY(-2px);
 }
 
 .case-body {
@@ -701,33 +677,6 @@ body.lang-en div[data-lang="en"] { display: block !important; }
   font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.55;
-}
-
-/* static "coming soon" indicator for reserved (non-clickable) slots */
-.case-cta.is-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 0 1.5rem 1.5rem;
-  padding: 0.85rem 1.1rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--muted-2);
-  cursor: not-allowed;
-  opacity: 0.7;
-}
-
-.case-card.is-placeholder {
-  border-style: dashed;
-}
-
-.case-card.is-placeholder:hover {
-  transform: none;
-  box-shadow: none;
-  border-color: var(--border);
 }
 
 /* ------------------------------------------------------------
@@ -797,19 +746,6 @@ body.lang-en div[data-lang="en"] { display: block !important; }
 .dash-card--gender {
   display: flex;
   flex-direction: column;
-}
-
-.dash-card--engagement {
-  grid-column: 1 / -1;
-}
-
-.dash-card--engagement .bar-list {
-  flex-direction: row;
-  gap: 1.75rem;
-}
-
-.dash-card--engagement .bar-row {
-  flex: 1;
 }
 
 .dash-card-title {
@@ -1041,21 +977,6 @@ body.lang-en div[data-lang="en"] { display: block !important; }
   height: 14px;
 }
 
-.nodra-card-media {
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  border-bottom: 1px solid var(--border-soft);
-}
-
-.nodra-card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s var(--ease-out);
-}
-
-.nodra-card:hover .nodra-card-media img { transform: scale(1.04); }
-
 .nodra-card-body { padding: 1.4rem 1.5rem 1.6rem; }
 
 .nodra-card-tag {
@@ -1079,19 +1000,6 @@ body.lang-en div[data-lang="en"] { display: block !important; }
   font-size: 0.86rem;
   color: var(--muted);
   line-height: 1.55;
-}
-
-.nodra-card.is-placeholder {
-  border-style: dashed;
-}
-
-.nodra-card.is-placeholder:hover {
-  transform: none;
-  border-color: var(--border);
-}
-
-.nodra-card.is-placeholder .nodra-card-tag {
-  color: var(--muted-2);
 }
 
 /* ------------------------------------------------------------

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  CASE STUDY TEMPLATE
+  ============================================================
+  How to use this file:
+
+  1. Duplicate it as case-studies/<slug>.html (e.g. case-studies/acme.html).
+  2. Replace every [BRACKETED PLACEHOLDER] below with real content.
+     Do not invent numbers or quotes: only use what you actually have.
+  3. Sections marked "OPTIONAL" can be deleted entirely if you don't
+     have that kind of data for this campaign. See the existing
+     pages for two real examples of how far you can trim:
+       - case-studies/pagfinance.html → full version (weekly
+         timeline, 3 content highlights, 5 KPIs, insights AND
+         lessons learned), use this shape when you have granular,
+         week-by-week data.
+       - case-studies/amulets.html / case-studies/merge.html →
+         trimmed version (no timeline, a single Featured Content
+         highlight, 3 KPIs via ".kpis-3", one Key Insight as prose
+         instead of a card grid), use this shape when you only
+         have campaign totals and one standout post.
+  4. Do not create new CSS for a new case study. Every visual
+     component used below already exists in css/style.css
+     (shared site-wide components: nav, footer, buttons, kpi-card,
+     dash-card, bar-list, reason-card...) or css/case-study.css
+     (components exclusive to case study pages: case-hero,
+     case-timeline, highlight-card, case-final-cta...). If you find
+     yourself wanting a new visual pattern, check both files first,
+     there's a good chance a close match already exists.
+  5. Add the new card to the Case Studies grid in ../index.html
+     (copy one <a class="case-card"> block, point its href to the
+     new page) so the case study is actually reachable.
+  6. Keep the language pattern: every visible piece of text needs a
+     <span data-lang="pt"> and a matching <span data-lang="en">.
+  ============================================================
+-->
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Company Name] Case Study | Satou</title>
+<meta name="description" content="Case study: [one sentence summarizing the campaign for search engines/social previews].">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body class="lang-pt">
+
+  <!-- ============================================================
+       NAV
+       Shared component, do not modify. Copy verbatim from any
+       existing case-studies/*.html file. Links use ../index.html
+       so section anchors resolve correctly from this subfolder.
+       ============================================================ -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="dot"></span>
+        SATOU
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="../index.html#case-studies" data-lang="pt">Case Studies</a>
+        <a href="../index.html#case-studies" data-lang="en">Case Studies</a>
+
+        <a href="../index.html#audience" data-lang="pt">Audiência</a>
+        <a href="../index.html#audience" data-lang="en">Audience</a>
+
+        <a href="../index.html#content" data-lang="pt">Conteúdo</a>
+        <a href="../index.html#content" data-lang="en">Content</a>
+
+        <a href="../index.html#nodra" data-lang="pt">Nodra</a>
+        <a href="../index.html#nodra" data-lang="en">Nodra</a>
+
+        <a href="../index.html#contact" data-lang="pt">Contato</a>
+        <a href="../index.html#contact" data-lang="en">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <button class="lang-toggle" data-lang-btn type="button" aria-label="Switch language">EN</button>
+
+        <a class="nav-social" href="https://x.com/Satoukibijusu" target="_blank" rel="noopener" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.2l-5.6-7.3L4 22H1l8.1-9.3L.9 2h7.3l5.1 6.7L18.9 2Zm-1.3 18h2L6.5 4H4.4l13.2 16Z"/></svg>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile panel -->
+    <div class="nav-mobile-panel">
+      <a href="../index.html#case-studies" data-lang="pt">Case Studies</a>
+      <a href="../index.html#case-studies" data-lang="en">Case Studies</a>
+
+      <a href="../index.html#audience" data-lang="pt">Audiência</a>
+      <a href="../index.html#audience" data-lang="en">Audience</a>
+
+      <a href="../index.html#content" data-lang="pt">Conteúdo</a>
+      <a href="../index.html#content" data-lang="en">Content</a>
+
+      <a href="../index.html#nodra" data-lang="pt">Nodra</a>
+      <a href="../index.html#nodra" data-lang="en">Nodra</a>
+
+      <a href="../index.html#contact" data-lang="pt">Contato</a>
+      <a href="../index.html#contact" data-lang="en">Contact</a>
+
+      <div class="nav-mobile-panel-actions">
+        <button class="lang-toggle" data-lang-btn type="button" aria-label="Switch language">EN</button>
+        <a class="nav-social" href="https://x.com/Satoukibijusu" target="_blank" rel="noopener" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.2l-5.6-7.3L4 22H1l8.1-9.3L.9 2h7.3l5.1 6.7L18.9 2Zm-1.3 18h2L6.5 4H4.4l13.2 16Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       CASE HERO
+       - Logo: put the company's real logo file in ../assets/logos/
+         and update src below. Keep it height-based (like every
+         other logo on the site) so it scales consistently.
+       - Title: a specific, storytelling headline, not the literal
+         campaign name from a report. What's the one-line story?
+       - Summary: 1-2 sentences, what was done and why it mattered.
+       - Meta pills: add/remove <span class="case-meta-item"> freely,
+         these are just short facts (format, timeframe, post count,
+         platform...), not required to match exactly 3 or 4.
+       ============================================================ -->
+  <section class="case-hero" id="top">
+    <div class="hero-bg-glow" aria-hidden="true"></div>
+
+    <div class="container case-hero-content">
+      <a href="../index.html#case-studies" class="case-back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18 9 12l6-6"/></svg>
+        <span data-lang="pt">Voltar para Case Studies</span>
+        <span data-lang="en">Back to Case Studies</span>
+      </a>
+
+      <div class="case-hero-brand" data-reveal>
+        <img class="case-hero-logo" src="../assets/logos/[company-logo].svg" alt="[Company Name] logo">
+        <span class="case-hero-brand-name">[Company Name]</span>
+      </div>
+
+      <h1 class="case-hero-title" data-reveal data-delay="1">
+        <span data-lang="pt">[Título storytelling em português]</span>
+        <span data-lang="en">[Storytelling headline in English]</span>
+      </h1>
+
+      <p class="case-hero-summary" data-reveal data-delay="2">
+        <span data-lang="pt">[Resumo curto da campanha, em português]</span>
+        <span data-lang="en">[Short campaign summary, in English]</span>
+      </p>
+
+      <div class="case-meta" data-reveal data-delay="3">
+        <span class="case-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v5"/></svg>
+          <span data-lang="pt">[Formato: ex. Parceria de conteúdo]</span>
+          <span data-lang="en">[Format: e.g. Content partnership]</span>
+        </span>
+        <span class="case-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <span>[Período, se relevante]</span>
+        </span>
+        <span class="case-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          <span>[N posts]</span>
+        </span>
+        <span class="case-meta-item">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.2l-5.6-7.3L4 22H1l8.1-9.3L.9 2h7.3l5.1 6.7L18.9 2Zm-1.3 18h2L6.5 4H4.4l13.2 16Z"/></svg>
+          <span>X (Twitter)</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CAMPAIGN OVERVIEW
+       Executive summary of the whole campaign in a couple of
+       sentences. Reuses .case-prose (plain paragraphs, no new CSS).
+       ============================================================ -->
+  <section class="section-pad" id="overview">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <div class="eyebrow">
+            <span data-lang="pt">Visão Geral da Campanha</span>
+            <span data-lang="en">Campaign Overview</span>
+          </div>
+          <h2>
+            <span data-lang="pt">[Subtítulo específico desta campanha]</span>
+            <span data-lang="en">[Campaign-specific subtitle]</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="case-prose" data-reveal data-delay="1">
+        <p>
+          <span data-lang="pt">[Resumo executivo da campanha, em português]</span>
+          <span data-lang="en">[Executive summary of the campaign, in English]</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       OBJECTIVE
+       ============================================================ -->
+  <section class="section-pad alt-bg" id="objective">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <div class="eyebrow">
+            <span data-lang="pt">Objetivo</span>
+            <span data-lang="en">Objective</span>
+          </div>
+          <h2>
+            <span data-lang="pt">[Subtítulo específico desta campanha]</span>
+            <span data-lang="en">[Campaign-specific subtitle]</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="case-prose" data-reveal data-delay="1">
+        <p>
+          <span data-lang="pt">[Qual era o objetivo da campanha, em português]</span>
+          <span data-lang="en">[What the campaign's objective was, in English]</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STRATEGY
+       Can be one or two paragraphs; add a second <p> pair if useful,
+       like the existing pages do.
+       ============================================================ -->
+  <section class="section-pad" id="strategy">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <div class="eyebrow">
+            <span data-lang="pt">Estratégia</span>
+            <span data-lang="en">Strategy</span>
+          </div>
+          <h2>
+            <span data-lang="pt">[Subtítulo específico desta campanha]</span>
+            <span data-lang="en">[Campaign-specific subtitle]</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="case-prose" data-reveal data-delay="1">
+        <p>
+          <span data-lang="pt">[Como a campanha foi construída, em português]</span>
+          <span data-lang="en">[How the campaign was built, in English]</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       OPTIONAL: EXECUTION TIMELINE
+       Only include this section if you have a real, dated
+       breakdown (e.g. week by week). Delete the whole <section> if
+       you only have campaign totals, see amulets.html/merge.html.
+       Duplicate one <div class="case-timeline-item"> per period.
+       ============================================================ -->
+  <section class="section-pad alt-bg" id="execution">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <div class="eyebrow">
+            <span data-lang="pt">Execução</span>
+            <span data-lang="en">Execution</span>
+          </div>
+          <h2>
+            <span data-lang="pt">[Subtítulo específico desta campanha]</span>
+            <span data-lang="en">[Campaign-specific subtitle]</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="case-timeline" data-reveal data-delay="1">
+        <div class="case-timeline-item">
+          <span class="case-timeline-dot" aria-hidden="true"></span>
+          <div class="case-timeline-header">
+            <span class="case-timeline-week">[Semana/Período 1]</span>
+            <span class="case-timeline-metric">[métrica] <span data-lang="pt">views</span><span data-lang="en">views</span></span>
+          </div>
+          <p>
+            <span data-lang="pt">[O que aconteceu e por que importou, em português]</span>
+            <span data-lang="en">[What happened and why it mattered, in English]</span>
+          </p>
+        </div>
+        <!-- Duplicate the block above for each additional period -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTENT HIGHLIGHTS / FEATURED CONTENT
+       Use the eyebrow/title that fits what you actually have:
+       - Multiple standout posts: "Content Highlights", 3 cards,
+         plain .highlight-grid (see pagfinance.html).
+       - A single standout post: "Featured Content", 1 card, add
+         the ".single" modifier to .highlight-grid (see
+         amulets.html/merge.html). Add a real post link with
+         .highlight-link if you have the URL.
+       Every highlight card should show a real screenshot of the
+       post via .highlight-media (a static image). Never embed
+       live posts from X or any other platform (no oEmbed, no
+       platform widgets/scripts), static screenshots keep the
+       page's performance, layout stability and visual consistency
+       intact. If you don't have a screenshot yet, use one of the
+       existing placeholder SVGs in assets/screenshots/ rather than
+       leaving the card without an image.
+       Duplicate/delete <div class="highlight-card"> blocks and
+       <div class="highlight-stat"> blocks freely, no fixed count.
+       ============================================================ -->
+  <section class="section-pad" id="highlights">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <div class="eyebrow">
+            <span data-lang="pt">Destaques de Conteúdo</span>
+            <span data-lang="en">Content Highlights</span>
+          </div>
+          <h2>
+            <span data-lang="pt">[Subtítulo específico desta campanha]</span>
+            <span data-lang="en">[Campaign-specific subtitle]</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="highlight-grid">
+        <div class="highlight-card" data-reveal data-delay="1">
+          <div class="highlight-media">
+            <img src="../assets/screenshots/[screenshot-file].svg" alt="[Short description] post screenshot">
+          </div>
+          <span class="highlight-tag">[Tag: ex. Top post]</span>
+          <p class="highlight-caption">
+            <span data-lang="pt">"[Legenda/gancho do post, em português]"</span>
+            <span data-lang="en">"[Post caption/hook, in English]"</span>
+          </p>
+          <div class="highlight-stats">
+            <div class="highlight-stat">
+              <span class="highlight-stat-value">[N]</span>
+              <span class="highlight-stat-label"><span data-lang="pt">Views</span><span data-lang="en">Views</span></span>
+            </div>
+            <div class="highlight-stat">
+              <span class="highlight-stat-value">[N]</span>
+              <span class="highlight-stat-label">Likes</span>
+            </div>
+            <!-- add/remove .highlight-stat blocks as needed: Replies, Reposts, etc. -->
+          </div>
+          <!-- OPTIONAL: only if you have the real post URL -->
+          <a class="highlight-link" href="[real post URL]" target="_blank" rel="noopener">
+            <span data-lang="pt">Ver post no X</span>
+            <span data-lang="en">View post on X</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M10 7h7v7"/></svg>
+          </a>
+        </div>
+        <!-- Duplicate the card above for each additional highlight -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RESULTS
+       - Use .dashboard-kpis for the plain 5-column layout (see
+         pagfinance.html) when you have 4-5 distinct metrics.
+       - Use .dashboard-kpis.kpis-3 when you only have 3 (see
+         amulets.html/merge.html). Add/remove .kpi-card blocks to
+         match however many real metrics you actually have.
+       - The weekly bar chart (.dash-card + .bar-list) is OPTIONAL:
+         only include it if Execution above has a real timeline
+         with real week-by-week numbers to visualize.
+       ============================================================ -->
+  <section class="section-pad alt-bg" id="results">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <div class="eyebrow">
+            <span data-lang="pt">Resultados</span>
+            <span data-lang="en">Results</span>
+          </div>
+          <h2>
+            <span data-lang="pt">[Subtítulo específico desta campanha]</span>
+            <span data-lang="en">[Campaign-specific subtitle]</span>
+          </h2>
+        </div>
+        <p class="case-results-intro">
+          <span data-lang="pt">[Uma frase curta resumindo o resultado geral]</span>
+          <span data-lang="en">[One short sentence summarizing the overall result]</span>
+        </p>
+      </div>
+
+      <div class="dashboard-kpis kpis-3">
+        <div class="kpi-card" data-reveal data-delay="1">
+          <div class="kpi-value"><span data-counter data-target="[número]">0</span></div>
+          <div class="kpi-label">[Label]</div>
+        </div>
+        <div class="kpi-card" data-reveal data-delay="2">
+          <div class="kpi-value"><span data-counter data-target="[número]">0</span></div>
+          <div class="kpi-label">[Label]</div>
+        </div>
+        <div class="kpi-card" data-reveal data-delay="3">
+          <div class="kpi-value"><span data-counter data-target="[número]">0</span></div>
+          <div class="kpi-label">[Label]</div>
+        </div>
+        <!-- Remove the "kpis-3" class above (leaving just
+             "dashboard-kpis") if you add a 4th/5th metric card -->
+      </div>
+
+      <!-- OPTIONAL: weekly/period breakdown chart, delete if not applicable
+      <div class="dash-card case-weekly-card" data-reveal data-delay="1">
+        <div class="dash-card-title">[Views by week]</div>
+        <div class="bar-list">
+          <div class="bar-row">
+            <div class="bar-row-label"><span>[Period 1]</span><span>[N]</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:[X]%"></div></div>
+          </div>
+        </div>
+      </div>
+      -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KEY INSIGHTS
+       - Multiple distinct insights → .reasons-grid of .reason-card
+         (see pagfinance.html), 3 cards read well; the icon inside
+         each .reason-icon is a simple line-style SVG, keep it
+         consistent with the ones already used across the site
+         (Why Brands Work With Me section, other case studies).
+       - A single insight → plain .case-prose paragraph instead of
+         a card grid (see amulets.html/merge.html). Don't force a
+         3-card grid if you only have one real insight to share.
+       ============================================================ -->
+  <section class="section-pad" id="insights">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <div class="eyebrow">
+            <span data-lang="pt">Principais Aprendizados</span>
+            <span data-lang="en">Key Insights</span>
+          </div>
+          <h2>
+            <span data-lang="pt">[Subtítulo específico desta campanha]</span>
+            <span data-lang="en">[Campaign-specific subtitle]</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="reasons-grid">
+        <div class="reason-card" data-reveal data-delay="1">
+          <span class="reason-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><!-- [simple line icon, 24x24 viewBox] --></svg>
+          </span>
+          <h3>
+            <span data-lang="pt">[Insight, em português]</span>
+            <span data-lang="en">[Insight, in English]</span>
+          </h3>
+          <p>
+            <span data-lang="pt">[Explicação curta, em português]</span>
+            <span data-lang="en">[Short explanation, in English]</span>
+          </p>
+        </div>
+        <!-- Duplicate the card above for each additional insight -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       OPTIONAL: LESSONS LEARNED
+       Only include if there's a genuine, distinct learning for
+       future partnerships beyond what's already said in Key
+       Insights (see pagfinance.html for an example with real
+       scheduling/format learnings). Delete this whole <section>
+       otherwise, don't duplicate Key Insights with different words.
+       ============================================================ -->
+  <section class="section-pad alt-bg" id="lessons">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <div class="eyebrow">
+            <span data-lang="pt">Lições Aprendidas</span>
+            <span data-lang="en">Lessons Learned</span>
+          </div>
+          <h2>
+            <span data-lang="pt">[Subtítulo específico desta campanha]</span>
+            <span data-lang="en">[Campaign-specific subtitle]</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="reasons-grid">
+        <div class="reason-card" data-reveal data-delay="1">
+          <span class="reason-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><!-- [simple line icon, 24x24 viewBox] --></svg>
+          </span>
+          <h3>
+            <span data-lang="pt">[Lição aprendida, em português]</span>
+            <span data-lang="en">[Lesson learned, in English]</span>
+          </h3>
+          <p>
+            <span data-lang="pt">[Explicação curta, em português]</span>
+            <span data-lang="en">[Short explanation, in English]</span>
+          </p>
+        </div>
+        <!-- Duplicate the card above for each additional lesson -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL CTA
+       Shared copy across every case study page on purpose (it's
+       Satou's standing invitation, not campaign-specific). Only
+       change it here if you're updating the wording everywhere,
+       in which case update it identically on every other
+       case-studies/*.html page too.
+       ============================================================ -->
+  <section class="section-pad case-final-cta" id="case-cta">
+    <div class="container">
+      <div class="eyebrow">
+        <span data-lang="pt">Aberto a parcerias</span>
+        <span data-lang="en">Open to partnerships</span>
+      </div>
+      <h2 data-reveal>
+        <span data-lang="pt">Quer resultados assim para sua marca?</span>
+        <span data-lang="en">Want results like this for your brand?</span>
+      </h2>
+      <p data-reveal data-delay="1">
+        <span data-lang="pt">Eu transformo uso real de produto em conteúdo que performa, e documento cada resultado.</span>
+        <span data-lang="en">I turn real product usage into content that performs, and I document every result.</span>
+      </p>
+      <div class="case-final-actions" data-reveal data-delay="2">
+        <a href="../index.html#contact" class="btn btn-primary">
+          <span data-lang="pt">Falar Comigo</span>
+          <span data-lang="en">Get in Touch</span>
+        </a>
+        <a href="../index.html#case-studies" class="btn btn-ghost">
+          <span data-lang="pt">Ver mais Case Studies</span>
+          <span data-lang="en">View more Case Studies</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       Shared component, do not modify. Copy verbatim from any
+       existing case-studies/*.html file.
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand-name"><span class="dot"></span>SATOU</div>
+        <div class="footer-brand-role">
+          <span data-lang="pt">Criador de Conteúdo Web3</span>
+          <span data-lang="en">Web3 Content Creator</span>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="../index.html#case-studies"><span data-lang="pt">Case Studies</span><span data-lang="en">Case Studies</span></a>
+        <a href="../index.html#audience"><span data-lang="pt">Audiência</span><span data-lang="en">Audience</span></a>
+        <a href="../index.html#content"><span data-lang="pt">Conteúdo</span><span data-lang="en">Content</span></a>
+        <a href="../index.html#nodra">Nodra</a>
+        <a href="../index.html#contact"><span data-lang="pt">Contato</span><span data-lang="en">Contact</span></a>
+      </nav>
+
+      <div class="footer-social">
+        <a class="nav-social" href="https://nodra.netlify.app/" target="_blank" rel="noopener" aria-label="Nodra">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 4 6 4 9s-1.5 6.4-4 9c-2.5-2.6-4-6-4-9s1.5-6.4 4-9Z"/></svg>
+        </a>
+        <a class="nav-social" href="https://x.com/Satoukibijusu" target="_blank" rel="noopener" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.2l-5.6-7.3L4 22H1l8.1-9.3L.9 2h7.3l5.1 6.7L18.9 2Zm-1.3 18h2L6.5 4H4.4l13.2 16Z"/></svg>
+        </a>
+        <a class="nav-social" href="https://t.me/Satoukibijusu" target="_blank" rel="noopener" aria-label="Telegram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 3.5 2.7 10.9c-1.1.4-1.1 1.6.1 2l4.6 1.4 1.8 5.6c.2.7 1.1.9 1.6.4l2.6-2.4 4.7 3.5c.8.6 2 .2 2.2-.8l3-14.4c.3-1.2-.9-2.2-2-1.7ZM8.6 14.9l-1-3 9.5-6.4-8.5 8.6Zm1.3 4 1.3-3.7 2 1.5-2.6 3.3c-.2.2-.6.1-.7-.1Z"/></svg>
+        </a>
+        <!-- TODO: confirm and update the real Instagram URL -->
+        <a class="nav-social" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+        <!-- TODO: confirm and update the real LinkedIn URL -->
+        <a class="nav-social" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><line x1="7.5" y1="10.5" x2="7.5" y2="16.5"/><circle cx="7.5" cy="7.3" r="0.9" fill="currentColor" stroke="none"/><path d="M11.5 16.5v-4c0-1.4 1-2.2 2.2-2.2 1.2 0 2 .8 2 2.2v4"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span class="footer-copy">
+        <span data-lang="pt">© 2026 Satoukibijusu. Todos os direitos reservados.</span>
+        <span data-lang="en">© 2026 Satoukibijusu. All rights reserved.</span>
+      </span>
+      <a href="#top" class="footer-top">
+        <span data-lang="pt">Voltar ao topo</span>
+        <span data-lang="en">Back to top</span>
+        ↑
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
