@@ -1,6 +1,4 @@
-git add .
-git commit -m "feat: refine landing page visuals and cleanup unused Nodra assets"
-git push/* ============================================================
+/* ============================================================
    SATOUKIBIJUSU (PORTFOLIO)
    style.css: base, tokens, typography, nav, hero
    Sections are appended in stages; each stage is clearly marked.
