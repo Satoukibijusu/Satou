@@ -1,4 +1,6 @@
-/* ============================================================
+git add .
+git commit -m "feat: refine landing page visuals and cleanup unused Nodra assets"
+git push/* ============================================================
    SATOUKIBIJUSU (PORTFOLIO)
    style.css: base, tokens, typography, nav, hero
    Sections are appended in stages; each stage is clearly marked.
@@ -911,6 +913,24 @@ body.lang-en div[data-lang="en"] { display: block !important; }
   color: var(--muted);
   line-height: 1.5;
 }
+
+.content-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--blue-bright);
+}
+
+.content-link svg {
+  width: 12px;
+  height: 12px;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.content-card:hover .content-link svg { transform: translate(2px, -2px); }
 
 /* ------------------------------------------------------------
    14. NODRA (compact mention)
