@@ -11,7 +11,7 @@
    ------------------------------------------------------------ */
 @media (max-width: 1024px) {
   :root {
-    --section-pad-y: 6.5rem;
+    --section-pad-y: 4.5rem;
     --gutter: 1.5rem;
   }
 
@@ -144,7 +144,6 @@
    NODRA / WHY BRANDS / TESTIMONIALS / CONTACT / FOOTER
    ------------------------------------------------------------ */
 @media (max-width: 1024px) {
-  .nodra-grid { grid-template-columns: repeat(2, 1fr); }
   .reasons-grid { grid-template-columns: repeat(2, 1fr); }
   .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
 
@@ -152,7 +151,7 @@
 }
 
 @media (max-width: 768px) {
-  .nodra-grid { grid-template-columns: 1fr; }
+  .nodra-mention-inner { flex-direction: column; align-items: flex-start; }
   .reasons-grid { grid-template-columns: 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }
 

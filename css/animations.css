@@ -65,11 +65,9 @@
 }
 .hero-eyebrow      { animation-delay: 0.05s; }
 .hero-title        { animation-delay: 0.15s; }
-.hero-role         { animation-delay: 0.25s; }
-.hero-mission      { animation-delay: 0.35s; }
-.hero-subtext      { animation-delay: 0.42s; }
-.hero-actions      { animation-delay: 0.50s; }
-.hero-stats        { animation-delay: 0.58s; }
+.hero-mission      { animation-delay: 0.28s; }
+.hero-actions      { animation-delay: 0.42s; }
+.hero-stats        { animation-delay: 0.52s; }
 
 .hero-visual {
   animation: fadeIn 1.1s var(--ease-out) 0.3s both;

@@ -34,7 +34,7 @@
   /* Layout */
   --container-max: 1240px;
   --gutter: 2rem;
-  --section-pad-y: 9rem;
+  --section-pad-y: 6.3rem;
   --nav-height: 76px;
 
   /* Motion */
@@ -387,36 +387,19 @@ body.lang-en div[data-lang="en"] { display: block !important; }
   margin-bottom: 0.6rem;
 }
 
-.hero-role {
-  font-family: var(--font-display);
-  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
-  font-weight: 600;
-  color: var(--blue-bright);
-  margin-bottom: 0.9rem;
-}
-
 .hero-mission {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
   font-weight: 600;
   color: var(--muted);
-  line-height: 1.25;
+  line-height: 1.35;
   max-width: 560px;
-  margin-bottom: 1.4rem;
+  margin-bottom: 2.2rem;
 }
 
 .hero-mission strong {
   color: var(--white);
   font-weight: 600;
-}
-
-.hero-subtext {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--muted);
-  max-width: 480px;
-  margin-bottom: 2.4rem;
 }
 
 .hero-actions {
@@ -930,76 +913,37 @@ body.lang-en div[data-lang="en"] { display: block !important; }
 }
 
 /* ------------------------------------------------------------
-   14. NODRA
+   14. NODRA (compact mention)
    ------------------------------------------------------------ */
-.nodra-head {
-  max-width: 680px;
-  margin-bottom: 3rem;
-}
-
-.nodra-head h2 {
-  font-size: clamp(2.2rem, 4.2vw, 3.2rem);
-  margin: 0.8rem 0 1.1rem;
-}
-
-.nodra-head p {
-  color: var(--muted);
-  font-size: 1.02rem;
-  line-height: 1.6;
-}
-
-.nodra-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-}
-
-.nodra-card {
-  display: block;
+.nodra-mention {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: border-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
 }
 
-.nodra-card:hover {
-  border-color: var(--blue-dim);
-  transform: translateY(-4px);
+.nodra-mention-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.nodra-cta {
-  margin-top: 1.75rem;
+.nodra-mention-inner p {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 640px;
 }
 
-.nodra-cta svg {
+.nodra-mention-inner p strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.nodra-mention-inner .btn svg {
   width: 14px;
   height: 14px;
-}
-
-.nodra-card-body { padding: 1.4rem 1.5rem 1.6rem; }
-
-.nodra-card-tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--blue-bright);
-  margin-bottom: 0.7rem;
-}
-
-.nodra-card-body h3 {
-  font-size: 1.08rem;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 0.5rem;
-}
-
-.nodra-card-body p {
-  font-size: 0.86rem;
-  color: var(--muted);
-  line-height: 1.55;
 }
 
 /* ------------------------------------------------------------
@@ -1115,11 +1059,11 @@ body.lang-en div[data-lang="en"] { display: block !important; }
 /* ------------------------------------------------------------
    17. CONTACT
    ------------------------------------------------------------ */
-.contact { position: relative; overflow: hidden; }
+.contact { position: relative; overflow: hidden; padding-bottom: 1.5rem; }
 
 .contact-bg-glow {
   position: absolute;
-  bottom: -20%;
+  bottom: 0%;
   left: 50%;
   transform: translateX(-50%);
   width: 70%;
@@ -1177,7 +1121,7 @@ body.lang-en div[data-lang="en"] { display: block !important; }
 .contact-link svg { width: 17px; height: 17px; }
 
 .contact-character {
-  margin-top: 3.5rem;
+  margin-top: 1.5rem;
   opacity: 0.95;
 }
 

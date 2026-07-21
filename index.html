@@ -93,20 +93,10 @@
 
         <h1 class="hero-title">Satou</h1>
 
-        <p class="hero-role">
-          <span data-lang="pt">Crypto Creator</span>
-          <span data-lang="en">Crypto Creator</span>
-        </p>
-
         <h2 class="hero-mission">
-          <span data-lang="pt">Construindo o <strong>futuro</strong> da adoção Web3.</span>
-          <span data-lang="en">Building the <strong>future</strong> of Web3 adoption.</span>
+          <span data-lang="pt">Ajudo empresas Web3 a transformar produtos complexos em conteúdo que gera <strong>confiança, comunidade e adoção</strong>.</span>
+          <span data-lang="en">I help Web3 companies transform complex products into content that builds <strong>trust, community and adoption</strong>.</span>
         </h2>
-
-        <p class="hero-subtext">
-          <span data-lang="pt">Ajudo empresas Web3 a transformar produtos complexos em conteúdo que as pessoas entendem e realmente usam.</span>
-          <span data-lang="en">I help Web3 companies transform complex products into content people understand and actually use.</span>
-        </p>
 
         <div class="hero-actions">
           <a href="#case-studies" class="btn btn-primary">
@@ -364,97 +354,112 @@
   </section>
 
   <!-- ============================================================
-       CONTENT FORMATS
-       Cards represent permanent categories (Educational Post,
-       Thread, Video, Tutorial), not specific campaigns. To update
-       a card in the future: swap the screenshot in
-       assets/screenshots/ and the href, titles/structure do not
-       need to change. The ".content-play" button is only meant
-       for video/tutorial cards; remove that <div> for static
-       formats like Educational Post.
+       CASE STUDIES
+       Each card links to its own dedicated page under
+       case-studies/*.html (see case-studies/pagfinance.html as the
+       template). To add a new case study: duplicate one
+       <a class="case-card"> block, update the logo/screenshot
+       paths (assets/logos and assets/screenshots), the objective/
+       results text and the href, then build the matching page by
+       copying an existing case-studies/*.html file.
        ============================================================ -->
-  <section class="content section-pad" id="content">
+  <section class="case-studies section-pad" id="case-studies">
     <div class="container">
       <div class="section-head" data-reveal>
         <div>
           <div class="eyebrow">
-            <span data-lang="pt">Produção</span>
-            <span data-lang="en">Production</span>
+            <span data-lang="pt">Prova de resultado</span>
+            <span data-lang="en">Proof of results</span>
           </div>
           <h2>
-            <span data-lang="pt">O que eu produzo</span>
-            <span data-lang="en">What I produce</span>
+            <span data-lang="pt">Case Studies</span>
+            <span data-lang="en">Case Studies</span>
           </h2>
         </div>
         <p>
-          <span data-lang="pt">Quatro formatos, um objetivo: transformar uso real em conteúdo que educa.</span>
-          <span data-lang="en">Four formats, one goal: turning real usage into content that educates.</span>
+          <span data-lang="pt">Campanhas reais, com objetivo e resultado claros, não apenas posts.</span>
+          <span data-lang="en">Real campaigns, with a clear objective and result, not just posts.</span>
         </p>
       </div>
 
-      <div class="content-grid">
+      <div class="case-grid">
 
-        <!-- Category: Educational Post. To update: swap the screenshot and the href only. -->
-        <!-- TODO: replace # with the real post URL -->
-        <a class="content-card" href="https://x.com/Satoukibijusu/status/2066539470405394480" target="_blank" rel="noopener" data-reveal data-delay="1">
-          <div class="content-media">
-            <img src="assets/content/content-posts.png" alt="Educational Post format example" loading="lazy">
+        <!-- Case 1: PagFinance (dedicated case study page) -->
+        <a class="case-card" href="case-studies/pagfinance.html" data-reveal data-delay="1">
+          <div class="case-card-header">
+            <img class="case-logo" src="assets/logos/pagfinance.svg" alt="PagFinance logo">
           </div>
-          <div class="content-info">
-            <h3><span data-lang="pt">Vitrine de Produto</span><span data-lang="en">Product Showcase</span></h3>
-            <p>
-              <span data-lang="pt">Conteúdo focado em apresentar um produto Web3 de forma educativa, destacando sua utilidade no mundo real.</span>
-              <span data-lang="en">Product-focused content combining education with real-world utility to introduce a Web3 solution naturally.</span>
-            </p>
-          </div>
-        </a>
-
-        <!-- Category: Thread. To update: swap the screenshot and the href only. -->
-        <!-- TODO: replace # with the real post URL -->
-        <a class="content-card" href="https://x.com/Satoukibijusu/status/2072701057134706690" target="_blank" rel="noopener" data-reveal data-delay="2">
-          <div class="content-media">
-            <img src="assets/content/content-threads.png" alt="Thread format example" loading="lazy">
-          </div>
-          <div class="content-info">
-            <h3><span data-lang="pt">Thread Educativa</span><span data-lang="en">Educational Thread</span></h3>
-            <p>
-              <span data-lang="pt">Uma thread aprofundada explicando o funcionamento dos oracles por meio do caso real do hack da Mango Markets.</span>
-              <span data-lang="en">An in-depth thread exploring how oracles work through the real-world Mango Markets exploit.</span>
-            </p>
-          </div>
-        </a>
-
-        <!-- Category: Video. To update: swap the screenshot and the href only. -->
-        <!-- TODO: replace # with the real post URL -->
-        <a class="content-card" href="https://x.com/Satoukibijusu/status/2077771437679456519" target="_blank" rel="noopener" data-reveal data-delay="3">
-          <div class="content-media">
-            <img src="assets/content/content-tutorials.png" alt="Video format example" loading="lazy">
-            <div class="content-play" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <div class="case-body">
+            <div class="case-block">
+              <span class="case-block-label" data-lang="pt">Objetivo</span>
+              <span class="case-block-label" data-lang="en">Objective</span>
+              <p data-lang="pt">Provar, na prática, que cripto resolve gastos reais do dia a dia.</p>
+              <p data-lang="en">Prove, in practice, that crypto solves real everyday spending.</p>
+            </div>
+            <div class="case-block">
+              <span class="case-block-label" data-lang="pt">Resultados</span>
+              <span class="case-block-label" data-lang="en">Results</span>
+              <p data-lang="pt">6.556 views em 9 posts, sem mídia paga.</p>
+              <p data-lang="en">6,556 views across 9 posts, with zero paid media.</p>
             </div>
           </div>
-          <div class="content-info">
-            <h3><span data-lang="pt">Conteúdo em Vídeo</span><span data-lang="en">Video Content</span></h3>
-            <p>
-              <span data-lang="pt">Vídeo apresentando uma solução Web3 de forma clara, destacando seus principais recursos e casos de uso.</span>
-              <span data-lang="en">Video content presenting a Web3 product through clear storytelling and real-world use cases.</span>
-            </p>
-          </div>
+          <span class="case-view-badge">
+            <span data-lang="pt">Ver Case</span>
+            <span data-lang="en">View Case</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M10 7h7v7"/></svg>
+          </span>
         </a>
 
-        <!-- Category: Tutorial. To update: swap the screenshot and the href only. -->
-        <!-- TODO: replace # with the real post URL -->
-        <a class="content-card" href="https://x.com/Satoukibijusu/status/2071977335016788358?s=20" target="_blank" rel="noopener" data-reveal data-delay="4">
-          <div class="content-media">
-            <img src="assets/content/content-update.png" alt="Tutorial format example" loading="lazy">
+        <!-- Case 2: Amulets (dedicated case study page) -->
+        <a class="case-card" href="case-studies/amulets.html" data-reveal data-delay="2">
+          <div class="case-card-header">
+            <img class="case-logo" src="assets/logos/amulets.png" alt="Amulets logo">
           </div>
-          <div class="content-info">
-            <h3><span data-lang="pt">Atualização de Produto</span><span data-lang="en">Product Update</span></h3>
-            <p>
-              <span data-lang="pt">Conteúdo explicando uma atualização importante do protocolo, traduzindo mudanças técnicas em informações claras e relevantes para a comunidade.</span>
-              <span data-lang="en">Clear and engaging content explaining an important protocol update, breaking down technical changes into practical insights for the community.</span>
-            </p>
+          <div class="case-body">
+            <div class="case-block">
+              <span class="case-block-label" data-lang="pt">Objetivo</span>
+              <span class="case-block-label" data-lang="en">Objective</span>
+              <p data-lang="pt">Mostrar pagamentos cripto reais em situações do dia a dia.</p>
+              <p data-lang="en">Show real crypto payments in everyday situations.</p>
+            </div>
+            <div class="case-block">
+              <span class="case-block-label" data-lang="pt">Resultados</span>
+              <span class="case-block-label" data-lang="en">Results</span>
+              <p data-lang="pt">6.097 views em uma campanha de afiliado contínua.</p>
+              <p data-lang="en">6,097 views across an ongoing affiliate campaign.</p>
+            </div>
           </div>
+          <span class="case-view-badge">
+            <span data-lang="pt">Ver Case</span>
+            <span data-lang="en">View Case</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M10 7h7v7"/></svg>
+          </span>
+        </a>
+
+        <!-- Case 3: Merge (dedicated case study page) -->
+        <a class="case-card" href="case-studies/merge.html" data-reveal data-delay="3">
+          <div class="case-card-header">
+            <img class="case-logo" src="assets/logos/mmerge.png" alt="Merge São Paulo logo">
+          </div>
+          <div class="case-body">
+            <div class="case-block">
+              <span class="case-block-label" data-lang="pt">Objetivo</span>
+              <span class="case-block-label" data-lang="en">Objective</span>
+              <p data-lang="pt">Cobrir a presença da Merge no ecossistema Web3 brasileiro.</p>
+              <p data-lang="en">Cover Merge's presence in the Brazilian Web3 ecosystem.</p>
+            </div>
+            <div class="case-block">
+              <span class="case-block-label" data-lang="pt">Resultados</span>
+              <span class="case-block-label" data-lang="en">Results</span>
+              <p data-lang="pt">2.562 views em 6 posts, direto do evento.</p>
+              <p data-lang="en">2,562 views across 6 posts, straight from the event.</p>
+            </div>
+          </div>
+          <span class="case-view-badge">
+            <span data-lang="pt">Ver Case</span>
+            <span data-lang="en">View Case</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M10 7h7v7"/></svg>
+          </span>
         </a>
 
       </div>
@@ -573,165 +578,95 @@
   </section>
 
   <!-- ============================================================
-       CASE STUDIES
-       Each card links to its own dedicated page under
-       case-studies/*.html (see case-studies/pagfinance.html as the
-       template). To add a new case study: duplicate one
-       <a class="case-card"> block, update the logo/screenshot
-       paths (assets/logos and assets/screenshots), the objective/
-       results text and the href, then build the matching page by
-       copying an existing case-studies/*.html file.
+       CONTENT FORMATS
+       Cards represent permanent categories (Educational Post,
+       Thread, Video, Tutorial), not specific campaigns. To update
+       a card in the future: swap the screenshot in
+       assets/screenshots/ and the href, titles/structure do not
+       need to change. The ".content-play" button is only meant
+       for video/tutorial cards; remove that <div> for static
+       formats like Educational Post.
        ============================================================ -->
-  <section class="case-studies section-pad" id="case-studies">
+  <section class="content section-pad" id="content">
     <div class="container">
       <div class="section-head" data-reveal>
         <div>
           <div class="eyebrow">
-            <span data-lang="pt">Prova de resultado</span>
-            <span data-lang="en">Proof of results</span>
+            <span data-lang="pt">Produção</span>
+            <span data-lang="en">Production</span>
           </div>
           <h2>
-            <span data-lang="pt">Case Studies</span>
-            <span data-lang="en">Case Studies</span>
+            <span data-lang="pt">O que eu produzo</span>
+            <span data-lang="en">What I produce</span>
           </h2>
         </div>
         <p>
-          <span data-lang="pt">Campanhas reais, com objetivo e resultado claros, não apenas posts.</span>
-          <span data-lang="en">Real campaigns, with a clear objective and result, not just posts.</span>
+          <span data-lang="pt">Quatro formatos, um objetivo: transformar uso real em conteúdo que educa.</span>
+          <span data-lang="en">Four formats, one goal: turning real usage into content that educates.</span>
         </p>
       </div>
 
-      <div class="case-grid">
+      <div class="content-grid">
 
-        <!-- Case 1: PagFinance (dedicated case study page) -->
-        <a class="case-card" href="case-studies/pagfinance.html" data-reveal data-delay="1">
-          <div class="case-card-header">
-            <img class="case-logo" src="assets/logos/pagfinance.svg" alt="PagFinance logo">
+        <!-- Category: Educational Post. To update: swap the screenshot and the href only. -->
+        <!-- TODO: replace # with the real post URL -->
+        <a class="content-card" href="https://x.com/Satoukibijusu/status/2066539470405394480" target="_blank" rel="noopener" data-reveal data-delay="1">
+          <div class="content-media">
+            <img src="assets/content/content-posts.png" alt="Educational Post format example" loading="lazy">
           </div>
-          <div class="case-body">
-            <div class="case-block">
-              <span class="case-block-label" data-lang="pt">Objetivo</span>
-              <span class="case-block-label" data-lang="en">Objective</span>
-              <p data-lang="pt">Provar, na prática, que cripto resolve gastos reais do dia a dia.</p>
-              <p data-lang="en">Prove, in practice, that crypto solves real everyday spending.</p>
-            </div>
-            <div class="case-block">
-              <span class="case-block-label" data-lang="pt">Resultados</span>
-              <span class="case-block-label" data-lang="en">Results</span>
-              <p data-lang="pt">6.556 views em 9 posts, sem mídia paga.</p>
-              <p data-lang="en">6,556 views across 9 posts, with zero paid media.</p>
-            </div>
-          </div>
-          <span class="case-view-badge">
-            <span data-lang="pt">Ver Case</span>
-            <span data-lang="en">View Case</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M10 7h7v7"/></svg>
-          </span>
-        </a>
-
-        <!-- Case 2: Amulets (dedicated case study page) -->
-        <a class="case-card" href="case-studies/amulets.html" data-reveal data-delay="2">
-          <div class="case-card-header">
-            <img class="case-logo" src="assets/logos/amulets.png" alt="Amulets logo">
-          </div>
-          <div class="case-body">
-            <div class="case-block">
-              <span class="case-block-label" data-lang="pt">Objetivo</span>
-              <span class="case-block-label" data-lang="en">Objective</span>
-              <p data-lang="pt">Mostrar pagamentos cripto reais em situações do dia a dia.</p>
-              <p data-lang="en">Show real crypto payments in everyday situations.</p>
-            </div>
-            <div class="case-block">
-              <span class="case-block-label" data-lang="pt">Resultados</span>
-              <span class="case-block-label" data-lang="en">Results</span>
-              <p data-lang="pt">6.097 views em uma campanha de afiliado contínua.</p>
-              <p data-lang="en">6,097 views across an ongoing affiliate campaign.</p>
-            </div>
-          </div>
-          <span class="case-view-badge">
-            <span data-lang="pt">Ver Case</span>
-            <span data-lang="en">View Case</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M10 7h7v7"/></svg>
-          </span>
-        </a>
-
-        <!-- Case 3: Merge (dedicated case study page) -->
-        <a class="case-card" href="case-studies/merge.html" data-reveal data-delay="3">
-          <div class="case-card-header">
-            <img class="case-logo" src="assets/logos/mmerge.png" alt="Merge São Paulo logo">
-          </div>
-          <div class="case-body">
-            <div class="case-block">
-              <span class="case-block-label" data-lang="pt">Objetivo</span>
-              <span class="case-block-label" data-lang="en">Objective</span>
-              <p data-lang="pt">Cobrir a presença da Merge no ecossistema Web3 brasileiro.</p>
-              <p data-lang="en">Cover Merge's presence in the Brazilian Web3 ecosystem.</p>
-            </div>
-            <div class="case-block">
-              <span class="case-block-label" data-lang="pt">Resultados</span>
-              <span class="case-block-label" data-lang="en">Results</span>
-              <p data-lang="pt">2.562 views em 6 posts, direto do evento.</p>
-              <p data-lang="en">2,562 views across 6 posts, straight from the event.</p>
-            </div>
-          </div>
-          <span class="case-view-badge">
-            <span data-lang="pt">Ver Case</span>
-            <span data-lang="en">View Case</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M10 7h7v7"/></svg>
-          </span>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       NODRA
-       Condensed to the two active pillars (Academy, Community).
-       Both the section CTA and each card link out to the live
-       platform to drive traffic there.
-       ============================================================ -->
-  <section class="nodra section-pad" id="nodra">
-    <div class="container">
-      <div class="nodra-head" data-reveal>
-        <div class="eyebrow">
-          <span data-lang="pt">Meu projeto de longo prazo</span>
-          <span data-lang="en">My long-term project</span>
-        </div>
-        <h2>Nodra</h2>
-        <p>
-          <span data-lang="pt">Meu principal projeto Web3 de longo prazo: um ecossistema que une comunidade e educação prática.</span>
-          <span data-lang="en">My main long-term Web3 project: an ecosystem bringing together community and practical education.</span>
-        </p>
-        <a class="btn btn-primary nodra-cta" href="https://nodra.netlify.app/" target="_blank" rel="noopener">
-          <span data-lang="pt">Visitar a Nodra</span>
-          <span data-lang="en">Visit Nodra</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-        </a>
-      </div>
-
-      <div class="nodra-grid">
-
-        <a class="nodra-card" href="https://nodra.netlify.app/academy/" target="_blank" rel="noopener" data-reveal data-delay="1">
-          <div class="nodra-card-body">
-            <span class="nodra-card-tag" data-lang="pt">Educação</span>
-            <span class="nodra-card-tag" data-lang="en">Education</span>
-            <h3>Nodra Academy</h3>
+          <div class="content-info">
+            <h3><span data-lang="pt">Vitrine de Produto</span><span data-lang="en">Product Showcase</span></h3>
             <p>
-              <span data-lang="pt">Educação prática para acelerar a adoção Web3.</span>
-              <span data-lang="en">Practical education to accelerate Web3 adoption.</span>
+              <span data-lang="pt">Conteúdo focado em apresentar um produto Web3 de forma educativa, destacando sua utilidade no mundo real.</span>
+              <span data-lang="en">Product-focused content combining education with real-world utility to introduce a Web3 solution naturally.</span>
             </p>
           </div>
         </a>
 
-        <a class="nodra-card" href="https://nodra.netlify.app/" target="_blank" rel="noopener" data-reveal data-delay="2">
-          <div class="nodra-card-body">
-            <span class="nodra-card-tag" data-lang="pt">Comunidade</span>
-            <span class="nodra-card-tag" data-lang="en">Community</span>
-            <h3>Nodra Community</h3>
+        <!-- Category: Thread. To update: swap the screenshot and the href only. -->
+        <!-- TODO: replace # with the real post URL -->
+        <a class="content-card" href="https://x.com/Satoukibijusu/status/2072701057134706690" target="_blank" rel="noopener" data-reveal data-delay="2">
+          <div class="content-media">
+            <img src="assets/content/content-threads.png" alt="Thread format example" loading="lazy">
+          </div>
+          <div class="content-info">
+            <h3><span data-lang="pt">Thread Educativa</span><span data-lang="en">Educational Thread</span></h3>
             <p>
-              <span data-lang="pt">Um espaço para conectar pessoas reais interessadas em Web3.</span>
-              <span data-lang="en">A space connecting real people interested in Web3.</span>
+              <span data-lang="pt">Uma thread aprofundada explicando o funcionamento dos oracles por meio do caso real do hack da Mango Markets.</span>
+              <span data-lang="en">An in-depth thread exploring how oracles work through the real-world Mango Markets exploit.</span>
+            </p>
+          </div>
+        </a>
+
+        <!-- Category: Video. To update: swap the screenshot and the href only. -->
+        <!-- TODO: replace # with the real post URL -->
+        <a class="content-card" href="https://x.com/Satoukibijusu/status/2077771437679456519" target="_blank" rel="noopener" data-reveal data-delay="3">
+          <div class="content-media">
+            <img src="assets/content/content-tutorials.png" alt="Video format example" loading="lazy">
+            <div class="content-play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="content-info">
+            <h3><span data-lang="pt">Conteúdo em Vídeo</span><span data-lang="en">Video Content</span></h3>
+            <p>
+              <span data-lang="pt">Vídeo apresentando uma solução Web3 de forma clara, destacando seus principais recursos e casos de uso.</span>
+              <span data-lang="en">Video content presenting a Web3 product through clear storytelling and real-world use cases.</span>
+            </p>
+          </div>
+        </a>
+
+        <!-- Category: Tutorial. To update: swap the screenshot and the href only. -->
+        <!-- TODO: replace # with the real post URL -->
+        <a class="content-card" href="https://x.com/Satoukibijusu/status/2071977335016788358?s=20" target="_blank" rel="noopener" data-reveal data-delay="4">
+          <div class="content-media">
+            <img src="assets/content/content-update.png" alt="Tutorial format example" loading="lazy">
+          </div>
+          <div class="content-info">
+            <h3><span data-lang="pt">Atualização de Produto</span><span data-lang="en">Product Update</span></h3>
+            <p>
+              <span data-lang="pt">Conteúdo explicando uma atualização importante do protocolo, traduzindo mudanças técnicas em informações claras e relevantes para a comunidade.</span>
+              <span data-lang="en">Clear and engaging content explaining an important protocol update, breaking down technical changes into practical insights for the community.</span>
             </p>
           </div>
         </a>
@@ -831,6 +766,28 @@
   </section>
 
   <!-- ============================================================
+       NODRA (compact mention)
+       Deliberately not a full section: Nodra is a side project, not
+       the main pitch, so it's a single line + button, not a chapter
+       with its own narrative. Keeps id="nodra" so the nav/footer
+       links (index.html + all case-studies/*.html) still resolve
+       without needing to change every page.
+       ============================================================ -->
+  <section class="nodra-mention" id="nodra">
+    <div class="container nodra-mention-inner">
+      <p data-reveal>
+        <span data-lang="pt">Além de criar conteúdo para empresas Web3, também fundei a <strong>Nodra</strong>, uma plataforma aberta de educação blockchain.</span>
+        <span data-lang="en">Besides creating content for Web3 companies, I also founded <strong>Nodra</strong>, an open blockchain education platform.</span>
+      </p>
+      <a class="btn btn-ghost" href="https://nodra.netlify.app/" target="_blank" rel="noopener" data-reveal data-delay="1">
+        <span data-lang="pt">Visitar a Nodra</span>
+        <span data-lang="en">Visit Nodra</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
        TESTIMONIALS
        No real testimonials yet: this structure is ready to receive
        them. To add one: replace the quote text, avatar image, name
@@ -838,7 +795,7 @@
        duplicate/delete one <article class="testimonial-card"> block;
        the grid adapts automatically (1 to 3 columns by screen size).
        ============================================================ -->
-  <section class="testimonials section-pad" id="testimonials">
+  <!--<section class="testimonials section-pad" id="testimonials">
     <div class="container">
       <div class="section-head" data-reveal>
         <div>
@@ -910,7 +867,7 @@
       </div>
     </div>
   </section>
-
+-->
   <!-- ============================================================
        CONTACT
        Instagram and LinkedIn URLs are marked with TODO comments
@@ -946,13 +903,11 @@
           <span>Telegram</span>
         </a>
 
-        <!-- TODO: confirm and update the real Instagram URL -->
         <a class="contact-link" href="https://www.instagram.com/satoukibijusu/" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg>
           <span>Instagram</span>
         </a>
 
-        <!-- TODO: confirm and update the real LinkedIn URL -->
         <a class="contact-link" href="https://www.linkedin.com/in/satoukibijusu" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><line x1="7.5" y1="10.5" x2="7.5" y2="16.5"/><circle cx="7.5" cy="7.3" r="0.9" fill="currentColor" stroke="none"/><path d="M11.5 16.5v-4c0-1.4 1-2.2 2.2-2.2 1.2 0 2 .8 2 2.2v4"/></svg>
           <span>LinkedIn</span>
@@ -997,11 +952,11 @@
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 3.5 2.7 10.9c-1.1.4-1.1 1.6.1 2l4.6 1.4 1.8 5.6c.2.7 1.1.9 1.6.4l2.6-2.4 4.7 3.5c.8.6 2 .2 2.2-.8l3-14.4c.3-1.2-.9-2.2-2-1.7ZM8.6 14.9l-1-3 9.5-6.4-8.5 8.6Zm1.3 4 1.3-3.7 2 1.5-2.6 3.3c-.2.2-.6.1-.7-.1Z"/></svg>
         </a>
         <!-- TODO: confirm and update the real Instagram URL -->
-        <a class="nav-social" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+        <a class="nav-social" href="https://www.instagram.com/satoukibijusu/" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg>
         </a>
         <!-- TODO: confirm and update the real LinkedIn URL -->
-        <a class="nav-social" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a class="nav-social" href="https://www.linkedin.com/in/satoukibijusu" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><line x1="7.5" y1="10.5" x2="7.5" y2="16.5"/><circle cx="7.5" cy="7.3" r="0.9" fill="currentColor" stroke="none"/><path d="M11.5 16.5v-4c0-1.4 1-2.2 2.2-2.2 1.2 0 2 .8 2 2.2v4"/></svg>
         </a>
       </div>
