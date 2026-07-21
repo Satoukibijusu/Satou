@@ -797,6 +797,14 @@ body.lang-en div[data-lang="en"] { display: block !important; }
   background: conic-gradient(var(--blue) calc(var(--pct) * 1%), var(--surface-2) 0);
 }
 
+.donut.donut--3 {
+  background: conic-gradient(
+    var(--blue) 0% calc(var(--pct-1) * 1%),
+    var(--blue-bright) calc(var(--pct-1) * 1%) calc(var(--pct-2) * 1%),
+    var(--muted-2) calc(var(--pct-2) * 1%) 100%
+  );
+}
+
 .donut::after {
   content: '';
   position: absolute;
@@ -827,7 +835,8 @@ body.lang-en div[data-lang="en"] { display: block !important; }
 }
 
 .donut-legend-item .dot.male { background: var(--blue); }
-.donut-legend-item .dot.female { background: var(--surface-2); border: 1px solid var(--border); }
+.donut-legend-item .dot.female { background: var(--blue-bright); }
+.donut-legend-item .dot.unspecified { background: var(--muted-2); }
 
 .donut-legend-item strong {
   color: var(--white);
